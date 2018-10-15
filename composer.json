@@ -1,0 +1,11 @@
+{
+    "name": "hexlet/brain-games",
+    "bin": ["bin/brain-games"]
+    "authors": [
+        {
+            "name": "Anna Yashina",
+            "email": "sowa84@bk.ru"
+        }
+    ],
+    "require": {}
+}
