@@ -10,17 +10,17 @@
             "email": "sowa84@bk.ru"
         }
     ],
-     "scripts": {
+    "scripts": {
 	"phpcs": "phpcs"
-	},
+    },
     "require": {
         "php": ">=7.1.0",
-        "wp-cli/php-cli-tools": "^0.11.10",
-        "squizlabs/php_codesniffer": "^3.3"
+        "wp-cli/php-cli-tools": "^0.11.10"
     },
     "autoload": {
         "files": ["src/Cli.php"]
     },
     "require-dev": {
+        "squizlabs/php_codesniffer": "^3.3"
     }
 }
