@@ -14,10 +14,11 @@
 
 ### Codeclimate Badges
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/9746d6359d595418912f/maintainability)](https://codeclimate.com/github/anna-yashina/anna-yashina.github.io/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1465b481af6b2e9cdf5e/maintainability)](https://codeclimate.com/github/anna-yashina/project-lvl1-s360/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9746d6359d595418912f/test_coverage)](https://codeclimate.com/github/anna-yashina/anna-yashina.github.io/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1465b481af6b2e9cdf5e/test_coverage)](https://codeclimate.com/github/anna-yashina/project-lvl1-s360/test_coverage)
 
 ### Travis Cl
 
-[![Build Status](https://travis-ci.org/anna-yashina/anna-yashina.github.io.svg?branch=master)](https://travis-ci.org/anna-yashina/anna-yashina.github.io)
+[![Build Status](https://travis-ci.org/anna-yashina/project-lvl1-s360.svg?branch=master)](https://travis-ci.org/anna-yashina/project-lvl1-s360)
+
