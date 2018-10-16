@@ -17,3 +17,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/9746d6359d595418912f/maintainability)](https://codeclimate.com/github/anna-yashina/anna-yashina.github.io/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9746d6359d595418912f/test_coverage)](https://codeclimate.com/github/anna-yashina/anna-yashina.github.io/test_coverage)
+
+### Travis Cl
+
+[![Build Status](https://travis-ci.org/anna-yashina/anna-yashina.github.io.svg?branch=master)](https://travis-ci.org/anna-yashina/anna-yashina.github.io)
