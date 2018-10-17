@@ -34,6 +34,8 @@
 
 ### Примеры выполнения
 
+[![asciicast](https://asciinema.org/a/rxDtbf98Ohx0YnkCYNHv3fEgK.png)](https://asciinema.org/a/rxDtbf98Ohx0YnkCYNHv3fEgK)
+
 ### Игра: "Калькулятор"
 
 ### Установка
@@ -45,6 +47,8 @@
 Для запуска программы необходимо запустить команду brain-calc из любой точки файловой системы.
 
 ### Примеры выполнения
+
+[![asciicast](https://asciinema.org/a/LALKWo4VV5nEoeZUOjmi1namU.png)](https://asciinema.org/a/LALKWo4VV5nEoeZUOjmi1namU)
 
 ### Игра "НОД"
 
@@ -58,6 +62,7 @@
 
 ### Примеры выполнения
 
+[![asciicast](https://asciinema.org/a/RBEhvzxFppt7Cx5CksFWdT8MW.png)](https://asciinema.org/a/RBEhvzxFppt7Cx5CksFWdT8MW)
 
 
 
