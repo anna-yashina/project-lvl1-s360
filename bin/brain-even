@@ -9,7 +9,7 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-define(RAND_MAX, 100);
+define("RAND_MAX", 100);
 
 function isEven($number)
 {
@@ -39,4 +39,6 @@ while ($count < 3)
   }
   $count++;
 }
+if ($count === 3) {
 BrainGames\Cli\isWinner($name);
+}
