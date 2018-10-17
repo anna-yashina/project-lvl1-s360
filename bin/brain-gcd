@@ -1,0 +1,48 @@
+#!/usr/bin/env php
+<?php
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+define("RAND_MAX", 100);
+
+function getGcd($number1, $number2)
+{
+  $result = 1;
+  for ($i = 1; $i <= min($number1, $number2); $i++) {
+    if ((($number1 % $i) == 0) && (($number2 % $i) == 0)) {
+      $result = $i;
+    }
+  }
+return $result;
+}
+
+$name = BrainGames\Cli\getName("Find the greatest common divisor of given numbers.");
+$count = 0;
+while ($count < 3)
+{
+  $number1 = rand(1, RAND_MAX);
+  $number2 = rand(1, RAND_MAX);
+
+  $answer = BrainGames\Cli\getAnswer($number1 . " " . $number2);
+  if (!is_numeric($answer)) {
+    BrainGames\Cli\invalidInput($name);
+    break;
+  }
+  $result = getGcd($number1, $number2);
+  if ($result == $answer) {
+    BrainGames\Cli\isCorrect();
+  } else {
+    BrainGames\Cli\isWrong($answer, $result, $name);
+    break;
+  }
+  $count++;
+}
+if ($count === 3) {
+BrainGames\Cli\isWinner($name);
+}

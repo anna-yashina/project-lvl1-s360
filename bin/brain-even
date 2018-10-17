@@ -16,7 +16,7 @@ function isEven($number)
   return (($number % 2) == 0) ? true : false;
 }
 
-$name = BrainGames\Cli\getName();
+$name = BrainGames\Cli\getName("Answer 'yes' if number even otherwise answer 'no'.");
 $count = 0;
 while ($count < 3)
 {

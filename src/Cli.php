@@ -5,18 +5,19 @@ namespace BrainGames\Cli;
 use function \cli\line;
 use function \cli\prompt;
 
-function getName()
+function getName($title)
 {
     line("Welcome to the Brain Game!");
-    line("Answer 'yes' if number even otherwise answer 'no'.");
+    line($title);
+  //  line();
     $name = prompt("May I have your name?");
     line("Hello, %s!", $name);
     return $name;
 }
 
-function getAnswer($number)
+function getAnswer($input)
 {
-    line("Question: " . $number);
+    line("Question: " . $input);
     return prompt("Your answer");
 }
 
@@ -27,13 +28,13 @@ function isWinner($name)
 
 function invalidInput($name)
 {
-    line("Invalid input! Answer 'yes' if number even otherwise answer 'no'.");
+    line("Invalid input!");
     line("Let's try again, " . $name . "!");
 }
 
 function isWrong($wrong, $correct, $name)
 {
-    line("'" . $wrong . "' is wrong answer;(. Correct answer was ' " . $correct . "'.");
+    line("'" . $wrong . "' is wrong answer;(. Correct answer was '" . $correct . "'.");
     line("Let's try again, " . $name . "!");
 }
 

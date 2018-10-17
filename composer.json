@@ -4,7 +4,9 @@
     "license": "MIT",
     "version": "1.0.0",
     "bin": ["bin/brain-games",
-            "bin/brain-even"],
+            "bin/brain-even",
+            "bin/brain-calc",
+            "bin/brain-gcd"],
     "authors": [
         {
             "name": "Anna Yashina",
