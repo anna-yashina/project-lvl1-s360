@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+define(RAND_MAX, 100);
+
+function isEven($number)
+{
+  return (($number % 2) == 0) ? true : false;
+}
+
+$name = BrainGames\Cli\getName();
+$count = 0;
+while ($count < 3)
+{
+  $number = rand(0, RAND_MAX);
+  $answer = BrainGames\Cli\getAnswer($number);
+  if (($answer != 'yes') && ($answer != 'no')) {
+    BrainGames\Cli\invalidInput($name);
+    break;
+  }
+  if ((($answer == 'yes') && (isEven($number))) || (($answer == 'no') && (!isEven($number)))) {
+    BrainGames\Cli\isCorrect();
+  }
+  if (($answer == 'yes') && (!isEven($number))) {
+    BrainGames\Cli\isWrong('yes', 'no', $name);
+    break;
+  }
+  if (($answer == 'no') && (isEven($number))) {
+    BrainGames\Cli\isWrong('no', 'yes', $name);
+    break;
+  }
+  $count++;
+}
+BrainGames\Cli\isWinner($name);

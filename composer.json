@@ -3,7 +3,8 @@
     "keywords": ["php", "composer", "games"],
     "license": "MIT",
     "version": "1.0.0",
-    "bin": ["bin/brain-games"],
+    "bin": ["bin/brain-games",
+            "bin/brain-even"],
     "authors": [
         {
             "name": "Anna Yashina",
