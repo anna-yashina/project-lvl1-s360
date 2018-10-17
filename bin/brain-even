@@ -9,36 +9,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-define("RAND_MAX", 100);
-
-function isEven($number)
-{
-  return (($number % 2) == 0) ? true : false;
-}
-
-$name = BrainGames\Cli\getName("Answer 'yes' if number even otherwise answer 'no'.");
-$count = 0;
-while ($count < 3)
-{
-  $number = rand(0, RAND_MAX);
-  $answer = BrainGames\Cli\getAnswer($number);
-  if (($answer != 'yes') && ($answer != 'no')) {
-    BrainGames\Cli\invalidInput($name);
-    break;
-  }
-  if ((($answer == 'yes') && (isEven($number))) || (($answer == 'no') && (!isEven($number)))) {
-    BrainGames\Cli\isCorrect();
-  }
-  if (($answer == 'yes') && (!isEven($number))) {
-    BrainGames\Cli\isWrong('yes', 'no', $name);
-    break;
-  }
-  if (($answer == 'no') && (isEven($number))) {
-    BrainGames\Cli\isWrong('no', 'yes', $name);
-    break;
-  }
-  $count++;
-}
-if ($count === 3) {
-BrainGames\Cli\isWinner($name);
-}
+BrainGames\Process\run("brain-even");

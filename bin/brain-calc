@@ -9,48 +9,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-define("RAND_MAX", 100);
-$operations = ["+", "-", "*"];
-
-function getResult($number1, $number2, $operation)
-{
-  $result = 0;
-  switch ($operation) {
-    case 0:
-        $result = $number1 + $number2;
-        break;
-    case 1:
-        $result = $number1 - $number2;
-        break;
-    case 2:
-        $result = $number1 * $number2;
-        break;
-}
-return $result;
-}
-
-$name = BrainGames\Cli\getName("What is the result of the expression?");
-$count = 0;
-while ($count < 3)
-{
-  $number1 = rand(0, RAND_MAX);
-  $number2 = rand(0, RAND_MAX);
-  $operation = rand(0, 2);
-
-  $answer = BrainGames\Cli\getAnswer($number1 . " " . $operations[$operation] . " " . $number2);
-  if (!is_numeric($answer)) {
-    BrainGames\Cli\invalidInput($name);
-    break;
-  }
-  $result = getResult($number1, $number2, $operation);
-  if ($result == $answer) {
-    BrainGames\Cli\isCorrect();
-  } else {
-    BrainGames\Cli\isWrong($answer, $result, $name);
-    break;
-  }
-  $count++;
-}
-if ($count === 3) {
-BrainGames\Cli\isWinner($name);
-}
+BrainGames\Process\run("brain-calc");

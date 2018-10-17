@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Cli;
+namespace BrainGames\Process;
 
 use function \cli\line;
 use function \cli\prompt;
@@ -9,7 +9,6 @@ function getName($title)
 {
     line("Welcome to the Brain Game!");
     line($title);
-  //  line();
     $name = prompt("May I have your name?");
     line("Hello, %s!", $name);
     return $name;
