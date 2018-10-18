@@ -64,5 +64,18 @@
 
 [![asciicast](https://asciinema.org/a/RBEhvzxFppt7Cx5CksFWdT8MW.png)](https://asciinema.org/a/RBEhvzxFppt7Cx5CksFWdT8MW)
 
+### Игра "Баланс"
+
+### Установка
+
+Для глобальной установки выполните команду composer global require "anna-yashina/test-games @dev"
+
+### Запуск
+
+Для запуска программы необходимо запустить команду brain-balance из любой точки файловой системы.
+
+### Примеры выполнения
+
+[![asciicast](https://asciinema.org/a/W4yV325KyAIKWGHUEBstong1b.png)](https://asciinema.org/a/W4yV325KyAIKWGHUEBstong1b)
 
 
