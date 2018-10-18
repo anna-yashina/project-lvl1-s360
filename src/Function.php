@@ -34,3 +34,24 @@ function getGcd($number1, $number2)
     }
     return $result;
 }
+
+function getBalance($number)
+{
+    $result = 0;
+    $numbers = str_split($number);
+    $max =  max($numbers);
+    $min =  min($numbers);
+    while (($max - $min) > 1) {
+        while (($max - $min) > 1) {
+            $max--;
+            $min++;
+        }
+        $numbers[array_search(max($numbers), $numbers)] = (string) $max;
+        $numbers[array_search(min($numbers), $numbers)] = (string) $min;
+        $max = max($numbers);
+        $min = min($numbers);
+    }
+    sort($numbers);
+    $result = (int) implode($numbers);
+    return $result;
+}

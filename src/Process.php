@@ -26,6 +26,9 @@ function getResult($gameName, $question)
             $number2 = $parts[1];
             $result = getGcd($number1, $number2);
             break;
+        case "brain-balance":
+            $result = getBalance($question);
+            break;
     }
         return $result;
 }
@@ -48,6 +51,9 @@ function getQuestion($gameName)
             $number2 = rand(1, RAND_MAX);
             $result = $number1 . " " . $number2;
             break;
+        case "brain-balance":
+            $result = rand(RAND_MAX, 100 * RAND_MAX);
+            break;
     }
           return $result;
 }
@@ -63,6 +69,9 @@ function getDescription($gameName)
             break;
         case "brain-gcd":
             $result = "Find the greatest common divisor of given numbers.";
+            break;
+        case "brain-balance":
+            $result = "Balance the given number.";
             break;
     }
     return $result;
@@ -80,6 +89,9 @@ function validate($gameName, $answer)
             $result = is_numeric($answer);
             break;
         case "brain-gcd":
+            $result = is_numeric($answer);
+            break;
+        case "brain-balance":
             $result = is_numeric($answer);
             break;
     }
