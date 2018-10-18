@@ -25,7 +25,6 @@
     },
     "autoload": {
      "files": ["src/Process.php",
-               "src/Function.php",
                "src/Cli.php",
                "src/games/brain-even.php",
                "src/games/brain-calc.php",
