@@ -44,6 +44,10 @@ function validate($answer)
 
 function run()
 {
-    $namespace = __NAMESPACE__;
-    run_bal(TITLE_BALANCE, $namespace . '\\getQuestion', $namespace . '\\validate', $namespace . '\\getResult');
+    run_balance(
+        TITLE_BALANCE,
+        __NAMESPACE__ . '\\getQuestion',
+        __NAMESPACE__ . '\\validate',
+        __NAMESPACE__ . '\\getResult'
+    );
 }
