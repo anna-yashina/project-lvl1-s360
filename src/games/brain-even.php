@@ -4,38 +4,33 @@ namespace BrainGames\GameEven;
 
 use function BrainGames\Process\run as run_even;
 
-class Even
+define("TITLE_EVEN", "Answer 'yes' if number even otherwise answer 'no'.");
+
+function isEven($number)
 {
-    const DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'.";
-    const RAND_MAX = 100;
+    return ($number % 2) == 0;
+}
 
-    public function isEven($number)
-    {
-        return ($number % 2) == 0;
-    }
+function getQuestion()
+{
+    return rand(0, RAND_MAX);
+}
 
-    public function getQuestion()
-    {
-        return rand(0, self::RAND_MAX);
-    }
+function getResult($question)
+{
+    return (isEven($question)) ? 'yes' : 'no';
+}
 
-    public function getResult($question)
-    {
-        return ($this->isEven($question)) ? 'yes' : 'no';
-    }
-
-    public function validate($answer)
-    {
-        $result = false;
-        if (($answer == 'yes') || ($answer == 'no')) {
-            $result = true;
-        };
-        return $result;
-    }
+function validate($answer)
+{
+    $result = false;
+    if (($answer == 'yes') || ($answer == 'no')) {
+        $result = true;
+    };
+    return $result;
 }
 
 function run()
 {
-    $even = new Even();
-    run_even($even);
+    run_even(TITLE_EVEN, __NAMESPACE__ . '\\getQuestion', __NAMESPACE__ . '\\validate', __NAMESPACE__ . '\\getResult');
 }

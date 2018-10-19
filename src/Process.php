@@ -3,19 +3,20 @@
 namespace BrainGames\Process;
 
 define("ATTEMPS", 3);
+define("RAND_MAX", 100);
 
-function run($obj)
+function run($description, $fnGetQuestion, $fnValidate, $fnGetResult)
 {
-    $name = getName($obj::DESCRIPTION);
+    $name = getName($description);
     $count = 0;
     for ($i = 0; $i < ATTEMPS; $i++) {
-        $question = $obj->getQuestion();
+        $question = $fnGetQuestion();
         $answer = getAnswer($question);
-        if (!$obj->validate($answer)) {
+        if (!$fnValidate($answer)) {
             invalidInput($name);
             break;
         }
-        $result = $obj->getResult($question);
+        $result = $fnGetResult($question);
         if ($result == $answer) {
             isCorrect();
         } else {
