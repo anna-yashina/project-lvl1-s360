@@ -78,4 +78,33 @@
 
 [![asciicast](https://asciinema.org/a/W4yV325KyAIKWGHUEBstong1b.png)](https://asciinema.org/a/W4yV325KyAIKWGHUEBstong1b)
 
+### Игра "Арифметическая прогрессия"
+
+### Установка
+
+Для глобальной установки выполните команду composer global require "anna-yashina/test-games @dev"
+
+### Запуск
+
+Для запуска программы необходимо запустить команду brain-progression из любой точки файловой системы.
+
+### Примеры выполнения
+
+[![asciicast](https://asciinema.org/a/jqoNhtr3Y3OTGEcnCBwBMC6fw.png)](https://asciinema.org/a/jqoNhtr3Y3OTGEcnCBwBMC6fw)
+
+### Игра "Простое ли число?"
+
+### Установка
+
+Для глобальной установки выполните команду composer global require "anna-yashina/test-games @dev"
+
+### Запуск
+
+Для запуска программы необходимо запустить команду brain-prime из любой точки файловой системы.
+
+### Примеры выполнения
+
+[![asciicast](https://asciinema.org/a/k4Bt1WFOJ0YT446bmdAW3mwmK.png)](https://asciinema.org/a/k4Bt1WFOJ0YT446bmdAW3mwmK)
+
+
 
