@@ -5,27 +5,37 @@ namespace BrainGames\Process;
 define("ATTEMPS", 3);
 define("RAND_MAX", 100);
 
-function run($description, $fnGetQuestion, $fnValidate, $fnGetResult)
+use function \cli\line;
+use function \cli\prompt;
+
+function run($description, $fnGenerate, $fnValidate)
 {
-    $name = getName($description);
+    line("Welcome to the Brain Game!");
+    line($description);
+    $name = prompt("May I have your name?");
+    line("Hello, %s!", $name);
     $count = 0;
     for ($i = 0; $i < ATTEMPS; $i++) {
-        $question = $fnGetQuestion();
-        $answer = getAnswer($question);
+        $generation = $fnGenerate();
+        $question = $generation["question"];
+        line("Question: " . $question);
+        $answer = prompt("Your answer");
         if (!$fnValidate($answer)) {
-            invalidInput($name);
+            line("Invalid input!");
+            line("Let's try again, " . $name . "!");
             break;
         }
-        $result = $fnGetResult($question);
+        $result = $generation["answer"];
         if ($result == $answer) {
-            isCorrect();
+            line("Correct!");
         } else {
-            isWrong($answer, $result, $name);
+            line("'" . $answer . "' is wrong answer;(. Correct answer was '" . $result . "'.");
+            line("Let's try again, " . $name . "!");
             break;
         }
         $count++;
     }
     if ($count === ATTEMPS) {
-        isWinner($name);
+        line("Congratulations, " . $name . "!");
     }
 }

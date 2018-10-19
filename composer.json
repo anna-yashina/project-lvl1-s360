@@ -8,7 +8,9 @@
             "bin/brain-even",
             "bin/brain-calc",
             "bin/brain-gcd",
-            "bin/brain-balance"
+            "bin/brain-balance",
+            "bin/brain-prime",
+            "bin/brain-progression"
            ],
     "authors": [
         {
@@ -25,11 +27,12 @@
     },
     "autoload": {
      "files": ["src/Process.php",
-               "src/Cli.php",
                "src/games/brain-even.php",
                "src/games/brain-calc.php",
                "src/games/brain-gcd.php",
-               "src/games/brain-balance.php"
+               "src/games/brain-balance.php",
+               "src/games/brain-prime.php",
+               "src/games/brain-progression.php"
              ]
 },
     "require-dev": {

@@ -2,9 +2,9 @@
 
 namespace BrainGames\GameBalance;
 
-use function BrainGames\Process\run as run_bal;
+use function BrainGames\Process\run as run_balance;
 
-define("TITLE_BALANCE", "Balance the given number.");
+const DESCRIPTION = "Balance the given number.";
 
 function getBalance($number)
 {
@@ -27,27 +27,18 @@ function getBalance($number)
     return $result;
 }
 
-function getQuestion()
-{
-    return rand(RAND_MAX, 100 * RAND_MAX);
-}
-
-function getResult($question)
-{
-    return getBalance($question);
-}
-
-function validate($answer)
-{
-    return is_numeric($answer);
-}
-
 function run()
 {
     run_balance(
-        TITLE_BALANCE,
-        __NAMESPACE__ . '\\getQuestion',
-        __NAMESPACE__ . '\\validate',
-        __NAMESPACE__ . '\\getResult'
+        DESCRIPTION,
+        function () {
+            $result = [];
+            $result["question"] = rand(RAND_MAX, 100 * RAND_MAX);
+            $result["answer"] = getBalance($result["question"]);
+            return $result;
+        },
+        function ($answer) {
+            return is_numeric($answer);
+        }
     );
 }
