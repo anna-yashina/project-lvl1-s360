@@ -5,6 +5,7 @@ namespace BrainGames\GameBalance;
 use function BrainGames\Process\run as run_balance;
 
 const DESCRIPTION = "Balance the given number.";
+const RAND_MAX = 100;
 
 function getBalance($number)
 {
@@ -23,22 +24,22 @@ function getBalance($number)
         $min = min($numbers);
     }
     sort($numbers);
-    $result = (int) implode($numbers);
+    $result = implode($numbers);
     return $result;
 }
 
 function run()
 {
+    $generate = function () {
+        $givenNumber = rand(RAND_MAX, 100 * RAND_MAX);
+        return [
+          $givenNumber,
+          getBalance($givenNumber)
+        ];
+    };
+
     run_balance(
         DESCRIPTION,
-        function () {
-            $result = [];
-            $result["question"] = rand(RAND_MAX, 100 * RAND_MAX);
-            $result["answer"] = getBalance($result["question"]);
-            return $result;
-        },
-        function ($answer) {
-            return is_numeric($answer);
-        }
+        $generate
     );
 }

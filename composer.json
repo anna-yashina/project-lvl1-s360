@@ -27,12 +27,12 @@
     },
     "autoload": {
      "files": ["src/Process.php",
-               "src/games/brain-even.php",
-               "src/games/brain-calc.php",
-               "src/games/brain-gcd.php",
-               "src/games/brain-balance.php",
-               "src/games/brain-prime.php",
-               "src/games/brain-progression.php"
+               "src/games/Even.php",
+               "src/games/Calc.php",
+               "src/games/Gcd.php",
+               "src/games/Balance.php",
+               "src/games/Prime.php",
+               "src/games/Progression.php"
              ]
 },
     "require-dev": {
