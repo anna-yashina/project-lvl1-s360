@@ -12,22 +12,19 @@ function run()
 {
     $generate = function () {
         $needleNumber = rand(1, LENGTH_PROGRESSION);
-        //https://ru.wikipedia.org/wiki/Арифметическая_прогрессия
-        //a1 - устойчивый термин из математики,
-        //означающий первый элемент арифметической прогрессии
-        $a1 = rand(1, RAND_MAX);
-        //d - устойчивый термин из математики,
-        //означающий разность арифмитической прогрессии
-        $d = rand(1, LENGTH_PROGRESSION);
+        $initialState = rand(1, RAND_MAX);
+        $difference = rand(1, LENGTH_PROGRESSION);
         $question = '';
-        $answer = 0;
+        $answer = '';
+
+        $sequence = [];
         for ($i = 1; $i < LENGTH_PROGRESSION; $i++) {
-            if ($i == $needleNumber) {
-                $question = $question . '..' . ' ';
-                $answer = $a1 + $d * ($i - 1);
-            } else {
-                $question = $question . (string) ($a1 + $d * ($i - 1)) . ' ';
+            $item = (string) ($initialState + $difference * ($i - 1));
+            if ($i === $needleNumber) {
+                $answer = $item;
+                $item = '..';
             }
+            $question = $question . $item . ' ';
         }
         return [
           substr($question, 0, -1),

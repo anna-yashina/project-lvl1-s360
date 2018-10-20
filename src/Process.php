@@ -18,7 +18,7 @@ function run($description, $fnGenerate)
         [$question, $result] = $fnGenerate();
         line("Question: " . $question);
         $answer = prompt("Your answer");
-        if ($result == $answer) {
+        if ($result === $answer) {
             line("Correct!");
         } else {
             line("'" . $answer . "' is wrong answer;(. Correct answer was '" . $result . "'.");
@@ -26,5 +26,5 @@ function run($description, $fnGenerate)
             return;
         }
     }
-        line("Congratulations, " . $name . "!");
+    line("Congratulations, " . $name . "!");
 }

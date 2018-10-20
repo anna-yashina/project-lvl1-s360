@@ -34,7 +34,7 @@ function run()
         $operation = rand(0, NUMBER_OPERATIONS);
         return [
             $firstOperand . " " . OPERATIONS[$operation] . " " . $secondOperand,
-            calculate($firstOperand, $secondOperand, OPERATIONS[$operation])
+            (string) (calculate($firstOperand, $secondOperand, OPERATIONS[$operation]))
         ];
     };
     run_calc(

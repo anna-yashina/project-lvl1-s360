@@ -26,7 +26,7 @@ function run()
         $secondNumber = rand(1, RAND_MAX);
         return [
           $firstNumber . " " . $secondNumber,
-          getGcd($firstNumber, $secondNumber)
+          (string) (getGcd($firstNumber, $secondNumber))
         ];
     };
     run_gcd(
