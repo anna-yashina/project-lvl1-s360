@@ -15,9 +15,8 @@ function run()
         $first = rand(1, RAND_MAX);
         $difference = rand(1, PROGRESSION_LENGTH);
         $answer = '';
-
         $question = [];
-        for ($i = 0; $i < PROGRESSION_LENGTH; $i++) {
+        for ($i = 1; $i <= PROGRESSION_LENGTH; $i++) {
             $item = (string) ($first + $difference * ($i - 1));
             if ($i === $needleNumber) {
                 $answer = $item;
