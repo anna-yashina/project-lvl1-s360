@@ -11,22 +11,19 @@ const RAND_MAX = 100;
 function run()
 {
     $generate = function () {
-        $needleNumber = rand(1, PROGRESSION_LENGTH);
-        $first = rand(1, RAND_MAX);
+        $needleIndex = rand(0, PROGRESSION_LENGTH - 1);
         $difference = rand(1, PROGRESSION_LENGTH);
-        $answer = '';
-        $question = [];
-        for ($i = 1; $i <= PROGRESSION_LENGTH; $i++) {
-            $item = (string) ($first + $difference * ($i - 1));
-            if ($i === $needleNumber) {
-                $answer = $item;
-                $item = '..';
-            }
-            $question[] = $item;
+        $sequence = [];
+        $current = rand(1, RAND_MAX);
+        for ($i = 0; $i < PROGRESSION_LENGTH; $i++) {
+            $sequence[] = $current;
+            $current += $difference;
         }
+        $answer = $sequence[$needleIndex];
+        $sequence[$needleIndex] = '..';
         return [
-          implode($question, ' '),
-          $answer
+          implode($sequence, ' '),
+          (string) $answer
         ];
     };
     run_progression(
